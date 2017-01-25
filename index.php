@@ -18,11 +18,11 @@ $cookiedomain = str_replace("www.","",$cookiedomain);
 
 $url = $base . $_SERVER['REQUEST_URI'];
 
-if($_SERVER['HTTPS'] == 'on'){
-	$mydomain = 'https://'.$_SERVER['HTTP_HOST'];
-} else {
-	$mydomain = 'http://'.$_SERVER['HTTP_HOST'];
-}
+//if($_SERVER['HTTPS'] == 'on'){
+	$mydomain = 'https://'.$_SERVER['HTTP_HOST'].'/';
+//} else {
+//	$mydomain = 'http://'.$_SERVER['HTTP_HOST'].'/';
+//}
 
 // Open the cURL session
 $curlSession = curl_init();

